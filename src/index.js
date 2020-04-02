@@ -14,7 +14,7 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <App />
       </ConnectedRouter>
-    </Provider>=
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
