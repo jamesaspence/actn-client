@@ -28,15 +28,15 @@
 
   .Link {
     text-decoration: none;
-    color: #3a3a3a;
-    border: 1px solid #3a3a3a;
+    color: $dark-gray;
+    border: 1px solid $dark-gray;
     padding: 12px;
     border-radius: 8px;
     margin: 0 8px;
 
     &:hover {
-      background-color: #3a3a3a;
-      color: #fff;
+      background-color: $dark-gray;
+      color: $white;
     }
   }
 

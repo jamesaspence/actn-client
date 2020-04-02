@@ -6,15 +6,15 @@
   justify-content: center;
   align-items: center;
   height: $footer-height;
-  background-color: #3a3a3a;
+  background-color: $dark-gray;
 
   .Attribution {
-    color: #fff;
+    color: $white;
   }
 
   .Attribution__link {
     text-decoration: none;
-    color: #fff;
+    color: $white;
 
     &:hover {
       opacity: 0.75;
