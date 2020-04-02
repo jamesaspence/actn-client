@@ -1,0 +1,6 @@
+export const STATUSES = {
+  NOT_LOADED: 'NOT_LOADED',
+  LOADING: 'LOADING',
+  SUCCESS: 'SUCCESS',
+  FAILURE: 'FAILURE'
+};
