@@ -1,7 +1,8 @@
 import { STATUSES } from '../../actions';
 import { getAccessToken } from '../../../localStorage';
-import { LOGIN } from '../../actions/auth';
+import { CHECK_AUTH, LOGIN } from '../../actions/auth';
 import loginSuccessReducer from './loginSuccess';
+import checkAuthReducer from './checkAuth';
 
 export const DEFAULT_STATE = {
   status: STATUSES.NOT_LOADED,
@@ -28,6 +29,8 @@ const authReducer = (state = DEFAULT_STATE, action = {}) => {
   switch (type) {
     case LOGIN:
       return loginSuccessReducer(state, action);
+    case CHECK_AUTH:
+      return checkAuthReducer(state, action);
     default:
       return state;
   }

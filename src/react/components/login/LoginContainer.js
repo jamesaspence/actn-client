@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import { attemptLogin } from '../../../api/auth';
 import { STATUSES } from '../../../redux/actions';
 import { push } from 'connected-react-router';
-import { setAccessToken } from '../../../localStorage';
+import { setAccessToken, encodeToken } from '../../../localStorage';
 import { loginSuccess } from '../../../redux/actions/auth';
 
 const expectedInputs = ['email', 'password'];
@@ -41,8 +41,9 @@ const LoginContainer = () => {
       .then(data => {
         setStatus(STATUSES.SUCCESS);
         setInputValues({});
-        setAccessToken(data.token);
-        dispatch(loginSuccess(data.token, data.user));
+        const encodedToken = encodeToken(data.user.id, data.token);
+        setAccessToken(encodedToken);
+        dispatch(loginSuccess(encodedToken, data.user));
         dispatch(push('/'));
       }).catch(error => {
         setStatus(STATUSES.FAILURE);
