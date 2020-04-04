@@ -1,39 +1,19 @@
 import React from 'react';
-import './RecordPrice.scss';
 import FormInput from '../form/FormInput';
 import FormButton from '../form/FormButton';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-
-const formatDate = date => {
-  const year = '' + date.getFullYear();
-  let month = '' + date.getMonth();
-  let day = '' + date.getDay();
-
-  if (month.length < 2) {
-    month = '0' + month;
-  }
-
-  if (day.length < 2) {
-    day = '0' + day;
-  }
-
-  return `${year}-${month}-${day}`;
-};
+import FormSelect from '../form/FormSelect';
+import FormDate from '../form/FormDate';
 
 const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) => (
   <form className="RecordPrice" onSubmit={onSubmit}>
-    <div className="field">
-      <label htmlFor="date" className="label">Date</label>
-      <div className="control">
-        <DayPickerInput
-          onDayChange={date => onInputChange('date', formatDate(date))}
-          inputProps={{
-            id: 'date',
-            className: 'input'
-          }}
-        />
-      </div>
-    </div>
+    <FormDate
+      name="date"
+      label="Date"
+      error={errors.hasOwnProperty('date')}
+      errorMessage={errors.date}
+      disabled={loading}
+      onChange={onInputChange}
+    />
     <FormInput
       name="price"
       label="Price"
@@ -43,18 +23,17 @@ const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) 
       type="number"
       disabled={loading}
       onChange={onInputChange} />
-    <div className="field">
-      <label htmlFor="time" className="label">Time</label>
-      <div className="control">
-        <div className="select">
-          <select name="time" id="time" defaultValue={'__disabled__'} value={inputValues.time} onChange={(event) => onInputChange('time', event.target.value)}>
-            <option disabled value={'__disabled__'}> -- Select a time -- </option>
-            <option value="morning">Morning</option>
-            <option value="evening">Evening</option>
-          </select>
-        </div>
-      </div>
-    </div>
+    <FormSelect
+      name="time"
+      label="Time"
+      error={errors.hasOwnProperty('time')}
+      errorMessage={errors.time}
+      value={inputValues.time}
+      disabled={loading}
+      onChange={onInputChange} >
+        <option value="morning">Morning</option>
+        <option value="evening">Evening</option>
+    </FormSelect>
     <FormButton type="submit" loading={loading} disabled={loading}>Submit</FormButton>
   </form>
 );
