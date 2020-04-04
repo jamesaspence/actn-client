@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UserRetrievalBoundary from './boundaries/UserRetrievalBoundary';
 import RecordPrice from './pages/RecordPrice';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/price" component={RecordPrice} />
-            <Route exact path="/" render={() => (<h1>Home Page</h1>)} />
+            <Route exact path="/" component={Home} />
             <Route path="/*" render={() => (<Redirect to="/" />)}/>
           </Switch>
         </div>
