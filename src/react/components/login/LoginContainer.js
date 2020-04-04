@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
 import { attemptLogin } from '../../../api/auth';
 import { STATUSES } from '../../../redux/actions';
+import { push } from 'connected-react-router';
 
 const expectedInputs = ['email', 'password'];
 
@@ -19,6 +21,7 @@ const LoginContainer = () => {
   const [ status, setStatus ] = useState(null);
   const [ inputValues, setInputValues ] = useState({});
   const [ errors, setValidationErrors ] = useState({});
+  const dispatch = useDispatch();
 
   const onFormSubmit = event => {
     event.preventDefault();
@@ -33,8 +36,13 @@ const LoginContainer = () => {
     const { email, password } = inputValues;
     setStatus(STATUSES.LOADING);
     attemptLogin(email, password)
-      .then(console.log)
-      .catch(error => {
+      .then(data => {
+        console.log('data', data);
+        setStatus(STATUSES.SUCCESS);
+        setInputValues({});
+        //TODO save token in local storage
+        dispatch(push('/'));
+      }).catch(error => {
         setStatus(STATUSES.FAILURE);
         if (!error.hasOwnProperty('response')) {
           setValidationErrors({
