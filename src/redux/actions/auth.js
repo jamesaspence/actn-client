@@ -1,12 +1,17 @@
 import { STATUSES } from './index';
 
 export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
 export const CHECK_AUTH = 'CHECK_AUTH';
 
 export const loginSuccess = (token, user) => ({
   type: LOGIN,
   token,
   user
+});
+
+export const logout = () => ({
+  type: LOGOUT
 });
 
 export const checkAuthLoading = () => ({
