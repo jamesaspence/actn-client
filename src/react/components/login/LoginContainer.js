@@ -42,7 +42,7 @@ const LoginContainer = () => {
         setStatus(STATUSES.SUCCESS);
         setInputValues({});
         setAccessToken(data.token);
-        dispatch(loginSuccess(data.token));
+        dispatch(loginSuccess(data.token, data.user));
         dispatch(push('/'));
       }).catch(error => {
         setStatus(STATUSES.FAILURE);
