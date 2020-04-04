@@ -48,7 +48,7 @@ const Header = () => {
     <header className="Header">
       <div className="Header__left">
         <Link to="/" className="Link--with-logo">
-          <img src={logo} alt="Turniptime logo" className="Header__logo"/>
+          <img src={logo} alt="ACTN logo" className="Header__logo"/>
         </Link>
       </div>
       <div className="Header__right">
