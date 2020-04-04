@@ -36,9 +36,11 @@ const FormDate = ({
       <div className="control">
         <DayPickerInput
           onDayChange={date => onInputChange(formatDate(date))}
+          formatDate={formatDate}
+          placeholder="YYYY-MM-DD"
           inputProps={{
             id: name,
-            className: 'input'
+            className: `input ${error ? 'is-danger' : ''}`
           }}
         />
       </div>
