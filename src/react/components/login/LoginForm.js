@@ -1,6 +1,6 @@
 import React from 'react';
-import FormInput from '../common/FormInput';
-import FormButton from '../common/FormButton';
+import FormInput from '../form/FormInput';
+import FormButton from '../form/FormButton';
 
 const LoginForm = ({ onSubmit, loading, inputValues, errors, onInputChange }) => {
 

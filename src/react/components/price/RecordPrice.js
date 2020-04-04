@@ -1,7 +1,7 @@
 import React from 'react';
 import './RecordPrice.scss';
-import FormInput from '../common/FormInput';
-import FormButton from '../common/FormButton';
+import FormInput from '../form/FormInput';
+import FormButton from '../form/FormButton';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 const formatDate = date => {
