@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getResponseData, hasToken, getToken } from './index';
+import { getResponseData, hasToken, withAuth } from './index';
 
 export const attemptLogin = (email, password) => {
   return axios.post('/api/login', {
@@ -22,9 +22,13 @@ export const checkAuth = () => {
     return Promise.reject('No access token stored');
   }
 
-  return axios.get('/api/auth/check', {
-    headers: {
-      Authorization: `Basic ${getToken()}`
-    }
-  }).then(getResponseData);
+  return axios.get('/api/auth/check', withAuth()).then(getResponseData);
+};
+
+export const postLogout = () => {
+  axios.post('/api/logout', {}, withAuth())
+    //ignore then / catch, we don't care if the postLogout fails on the server side
+    //TODO find a safer way to "ignore" this
+    .then(() => {})
+    .catch(() => {});
 };

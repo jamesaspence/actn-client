@@ -13,3 +13,9 @@ export const hasToken = () => {
 
   return (token != null && typeof token === 'string' && token.length > 0);
 };
+
+export const withAuth = () => ({
+  headers: {
+    Authorization: `Basic ${getToken()}`
+  }
+});

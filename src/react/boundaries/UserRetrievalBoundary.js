@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { STATUSES } from '../../redux/actions';
 import { checkAuthLoading, checkAuthSuccess, checkAuthFailure } from '../../redux/actions/auth';
 import { checkAuth } from '../../api/auth';
 import { clearAccessToken } from '../../localStorage';
@@ -10,7 +9,7 @@ const UserRetrievalBoundary = ({ children }) => {
   const userStatus = useSelector(selectUserStatus);
   const dispatch = useDispatch();
 
-  if (userStatus === STATUSES.NOT_LOADED) {
+  if (userStatus == null) {
     dispatch(checkAuthLoading());
 
     checkAuth()
@@ -23,7 +22,11 @@ const UserRetrievalBoundary = ({ children }) => {
       });
   }
 
-  return children;
+  return (
+    <>
+      { children }
+    </>
+  );
 };
 
 export default UserRetrievalBoundary;
