@@ -24,3 +24,11 @@ export const checkAuth = () => {
 
   return axios.get('/api/auth/check', withAuth()).then(getResponseData);
 };
+
+export const postLogout = () => {
+  axios.post('/api/postLogout', {}, withAuth())
+    //ignore then / catch, we don't care if the postLogout fails on the server side
+    //TODO find a safer way to "ignore" this
+    .then(() => {})
+    .catch(() => {});
+};
