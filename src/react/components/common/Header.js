@@ -49,6 +49,7 @@ const Header = () => {
       <div className="Header__left">
         <Link to="/" className="Link--with-logo">
           <img src={logo} alt="ACTN logo" className="Header__logo"/>
+          <h1 className="Header__logoText">ACTN</h1>
         </Link>
       </div>
       <div className="Header__right">

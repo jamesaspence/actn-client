@@ -7,9 +7,17 @@
   padding: 12px;
   height: $header-height;
   box-sizing: border-box;
+  background-color: $yellow;
 
   .Header__logo {
     width: 64px;
+  }
+
+  .Header__logoText {
+    margin: 0;
+    color: $app-black;
+    font-weight: bold;
+    font-size: 26px;
   }
 
   .Header__left {
@@ -24,7 +32,10 @@
   }
 
   .Link--with-logo {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     height: 64px;
   }
 
