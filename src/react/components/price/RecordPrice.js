@@ -5,13 +5,13 @@ import FormSelect from '../form/FormSelect';
 import FormDate from '../form/FormDate';
 
 const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) => (
+  //TODO disable sundays for price input
   <form className="RecordPrice" onSubmit={onSubmit}>
     <FormDate
       name="date"
       label="Date"
       error={errors.hasOwnProperty('date')}
       errorMessage={errors.date}
-      disabled={loading}
       onChange={onInputChange}
     />
     <FormInput

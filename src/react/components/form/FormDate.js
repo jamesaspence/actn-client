@@ -24,7 +24,6 @@ const FormDate = ({
   error = false,
   errorMessage = null,
   onChange,
-  disabled = false
 }) => {
 
   const onInputChange = dateString => {
@@ -36,7 +35,6 @@ const FormDate = ({
       <label htmlFor={name} className="label">{label}</label>
       <div className="control">
         <DayPickerInput
-          disabled={true}
           onDayChange={date => onInputChange(formatDate(date))}
           inputProps={{
             id: name,
@@ -49,17 +47,6 @@ const FormDate = ({
         <p className="help is-danger">{errorMessage}</p>
       }
     </div>
-    // <div className="field">
-    //   <label htmlFor="time" className="label">{label}</label>
-    //   <div className="control">
-    //     <div className="select">
-    //       <select name="time" disabled={disabled} id="time" value={value} onChange={onInputChange}>
-    //         <option disabled value={defaultValue}>{defaultValueText}</option>
-    //         {children}
-    //       </select>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
