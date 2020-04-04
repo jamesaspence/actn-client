@@ -14,7 +14,7 @@ const LoginForm = ({ onSubmit, loading, inputValues, errors, onInputChange }) =>
         errorMessage={errors.email}
         value={inputValues.email}
         disabled={loading}
-        autoComplete="current-password"
+        autoComplete="email"
         onChange={onInputChange} />
       <FormInput
         name="password"
