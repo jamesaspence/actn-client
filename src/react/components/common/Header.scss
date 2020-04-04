@@ -1,0 +1,43 @@
+@import '../../../variables';
+
+.Header {
+  display: flex;
+  padding: 12px;
+  height: $header-height;
+  box-sizing: border-box;
+
+  .Header__logo {
+    width: 64px;
+  }
+
+  .Header__left {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Header__right {
+    margin: auto 0 auto auto;
+  }
+
+  .Link--with-logo {
+    display: block;
+    height: 64px;
+  }
+
+  .Link {
+    text-decoration: none;
+    color: $dark-gray;
+    border: 1px solid $dark-gray;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 0 8px;
+
+    &:hover {
+      background-color: $dark-gray;
+      color: $app-white;
+    }
+  }
+
+}
