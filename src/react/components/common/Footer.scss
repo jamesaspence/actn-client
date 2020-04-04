@@ -9,12 +9,12 @@
   background-color: $dark-gray;
 
   .Attribution {
-    color: $white;
+    color: $app-white;
   }
 
   .Attribution__link {
     text-decoration: none;
-    color: $white;
+    color: $app-white;
 
     &:hover {
       opacity: 0.75;

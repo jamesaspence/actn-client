@@ -1,7 +1,18 @@
 import React from 'react';
 import './FormInput.scss';
 
-const FormInput = ({ name, label, onChange, value = '', type = 'text', placeholder = null, error = false, errorMessage = null, autoComplete = null }) => {
+const FormInput = ({
+  name,
+  label,
+  onChange,
+  value = '',
+  type = 'text',
+  placeholder = null,
+  error = false,
+  errorMessage = null,
+  autoComplete = null,
+  disabled = false
+}) => {
 
   const onInputChange = event => {
     const val = event.target.value;
@@ -12,7 +23,16 @@ const FormInput = ({ name, label, onChange, value = '', type = 'text', placehold
     <div className="field FormInput">
       <label htmlFor={name} className="label">{label}</label>
       <div className="control">
-        <input type={type} className={`input ${error ? 'is-danger' : ''}`} id={name} name={name} value={value} onChange={onInputChange} autoComplete={autoComplete} placeholder={placeholder}/>
+        <input
+          type={type}
+          className={`input ${error ? 'is-danger' : ''}`}
+          id={name}
+          name={name}
+          disabled={disabled}
+          value={value}
+          onChange={onInputChange}
+          autoComplete={autoComplete}
+          placeholder={placeholder}/>
       </div>
       {
         error && errorMessage != null &&

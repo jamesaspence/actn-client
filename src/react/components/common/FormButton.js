@@ -1,9 +1,9 @@
 import React from 'react';
 import './FormButton.scss';
 
-const FormButton = ({ children, type = 'button', onClick = null }) => {
+const FormButton = ({ children, loading = false, disabled = false, type = 'button', onClick = null }) => {
   return (
-    <button className="FormButton" onClick={onClick} type={type}>{children}</button>
+    <button className={`FormButton button is-dark ${loading ? 'is-loading' : ''}`} disabled={disabled} onClick={onClick} type={type}>{children}</button>
   )
 };
 
