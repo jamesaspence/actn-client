@@ -1,0 +1,18 @@
+@import '../../../variables';
+
+//TODO consolidate with Link styling
+.FormButton {
+  text-decoration: none;
+  color: $dark-gray;
+  border: 1px solid $dark-gray;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: $dark-gray;
+    color: $white;
+  }
+}
