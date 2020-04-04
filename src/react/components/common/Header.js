@@ -1,4 +1,5 @@
 import React from 'react';
+import { version } from '../../../../package.json';
 import './Header.scss';
 import logo from '../../../resources/logo.svg';
 import { Link } from 'react-router-dom';
@@ -50,6 +51,7 @@ const Header = () => {
         <Link to="/" className="Link--with-logo">
           <img src={logo} alt="ACTN logo" className="Header__logo"/>
           <h1 className="Header__logoText">ACTN</h1>
+          <small className="Header__version">{version}</small>
         </Link>
       </div>
       <div className="Header__right">

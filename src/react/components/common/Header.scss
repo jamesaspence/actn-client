@@ -20,6 +20,11 @@
     font-size: 26px;
   }
 
+  .Header__version {
+    color: $app-black;
+    margin-left: 4px;
+  }
+
   .Header__left {
     margin: 0;
     display: flex;
