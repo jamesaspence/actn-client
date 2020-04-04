@@ -3,7 +3,11 @@ import './ContentLayout.scss';
 
 const ContentLayout = ({ children, className='' }) => (
   <div className={`ContentLayout ${className}`}>
-    { children }
+    <div className="section">
+      <div className="container">
+        { children }
+      </div>
+    </div>
   </div>
 );
 

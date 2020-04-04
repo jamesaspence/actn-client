@@ -1,5 +1,4 @@
 import React from 'react';
-import './RegisterForm.scss';
 import FormInput from '../common/FormInput';
 import FormButton from '../common/FormButton';
 
