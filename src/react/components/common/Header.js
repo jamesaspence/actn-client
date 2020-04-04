@@ -11,8 +11,8 @@ import { push } from 'connected-react-router';
 
 const renderButtons = (userStatus, dispatch) => {
   const onLogoutClick = () => {
-    // postLogout();
-    // clearAccessToken();
+    postLogout();
+    clearAccessToken();
     dispatch(push('/'));
     dispatch(logout());
   };
