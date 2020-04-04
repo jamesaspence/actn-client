@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LoginForm.scss';
 import FormInput from '../common/FormInput';
 import FormButton from '../common/FormButton';
