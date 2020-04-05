@@ -4,8 +4,8 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 const formatDate = date => {
   const year = '' + date.getFullYear();
-  let month = '' + date.getMonth();
-  let day = '' + date.getDay();
+  let month = '' + (date.getMonth() + 1);
+  let day = '' + date.getDate();
 
   if (month.length < 2) {
     month = '0' + month;
