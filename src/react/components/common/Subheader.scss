@@ -1,2 +1,13 @@
 @import '~bulma/sass/utilities/all';
 @import '~bulma/sass/elements/title';
+@import '../../../variables';
+
+.Subheader {
+  display: inline-block;
+  font-weight: bold;
+
+  .Subheader__inner {
+    padding: 0 4px 2px;
+    border-bottom: 2px solid $cyan;
+  }
+}
