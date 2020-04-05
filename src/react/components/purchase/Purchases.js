@@ -15,7 +15,7 @@ const renderTable = purchases => {
 
   return (
     <>
-      <Subheader>This week's purchases</Subheader>
+      <Subheader>Your Purchases</Subheader>
       <table className="Purchases__table table">
         <thead>
         <tr>

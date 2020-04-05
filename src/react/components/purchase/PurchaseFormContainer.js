@@ -59,7 +59,7 @@ const PurchaseFormContainer = () => {
 
   return (
     <>
-      <Subheader>Record another purchase</Subheader>
+      <Subheader>Record Another Purchase</Subheader>
       <PurchaseForm
         onSubmit={onFormSubmit}
         onInputChange={onInputChange}
