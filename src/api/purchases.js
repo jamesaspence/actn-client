@@ -5,3 +5,11 @@ export const fetchCurrentPurchases = () => {
   return axios.get(createApiUrl('/api/purchases/current'), withAuth())
     .then(getResponseData);
 };
+
+export const postCurrentPurchase = (price, quantity) => {
+  return axios.post(createApiUrl('/api/purchases'), {
+    price,
+    quantity
+  }, withAuth())
+    .then(getResponseData);
+};

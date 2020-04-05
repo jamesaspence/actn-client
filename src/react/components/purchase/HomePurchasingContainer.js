@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import selectLoggedIn from '../../../redux/selectors/auth/selectLoggedIn';
 import HomePurchasingMessage from './HomePurchasingMessage';
+import PurchaseFormContainer from './PurchaseFormContainer';
 import Purchases from './Purchases';
 import { fetchCurrentPurchases } from '../../../api/purchases';
 import { getCurrentPurchases } from '../../../redux/actions/prices';
@@ -11,6 +12,7 @@ import selectCurrentPurchases from '../../../redux/selectors/prices/selectCurren
 const renderLoggedInComponents = purchases => {
   return (
     <>
+      <PurchaseFormContainer />
       <Purchases purchases={purchases}/>
     </>
   )
