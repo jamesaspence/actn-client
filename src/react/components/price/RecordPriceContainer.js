@@ -4,9 +4,22 @@ import { recordPrice } from '../../../api/price';
 import { push } from 'connected-react-router';
 import { useDispatch } from 'react-redux';
 import { STATUSES } from '../../../redux/actions';
+import { formatDate, getTimeOfDay, isSunday, subtractDay } from '../../../service/date';
+
+const generateInitialValues = () => {
+  let date = new Date();
+  if (isSunday(date)) {
+    date = subtractDay(date);
+  }
+
+  return {
+    date: formatDate(date),
+    time: getTimeOfDay(date)
+  };
+};
 
 const RecordPriceContainer = () => {
-  const [ inputValues, setInputValues ] = useState({});
+  const [ inputValues, setInputValues ] = useState(generateInitialValues());
   const [ status, setStatus ] = useState(null);
   const [ errors, setValidationErrors ] = useState({});
   const dispatch = useDispatch();
