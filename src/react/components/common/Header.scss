@@ -1,0 +1,53 @@
+@import '~bulma/sass/utilities/all';
+@import '~bulma/sass/elements/button';
+@import '../../../variables';
+
+.Header {
+  display: flex;
+  padding: 12px;
+  height: $header-height;
+  box-sizing: border-box;
+  background-color: $yellow;
+
+  .Header__logo {
+    width: 64px;
+  }
+
+  .Header__logoText {
+    margin: 0;
+    color: $app-black;
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  .Header__version {
+    color: $app-black;
+    margin-left: 4px;
+  }
+
+  .Header__left {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Header__right {
+    margin: auto 0 auto auto;
+  }
+
+  .Link--with-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 64px;
+  }
+
+  .Link {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0 12px;
+    cursor: pointer;
+  }
+}
