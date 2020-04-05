@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { getResponseData, withAuth } from './index';
+import { getResponseData, withAuth, createApiUrl } from './index';
 
 export const recordPrice = (date, price, time) => {
-  return axios.post('/api/prices', {
+  return axios.post(createApiUrl('/api/prices'), {
     date,
     price,
     time

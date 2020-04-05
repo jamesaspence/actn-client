@@ -19,3 +19,7 @@ export const withAuth = () => ({
     Authorization: `Basic ${getToken()}`
   }
 });
+
+export const getBaseUrl = () => process.env.REACT_APP_API_URL;
+
+export const createApiUrl = relativeUrl => `${getBaseUrl()}${!relativeUrl.startsWith('/') ? '/' + relativeUrl : relativeUrl}`;

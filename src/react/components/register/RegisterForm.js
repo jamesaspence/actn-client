@@ -31,6 +31,7 @@ const RegisterForm = ({ onSubmit, loading, inputValues, errors, onInputChange })
         value={inputValues.password}
         type="password"
         disabled={loading}
+        autoComplete="new-password"
         onChange={onInputChange} />
       <FormInput
         name="passwordConfirmation"
@@ -40,6 +41,7 @@ const RegisterForm = ({ onSubmit, loading, inputValues, errors, onInputChange })
         value={inputValues.passwordConfirmation}
         type="password"
         disabled={loading}
+        autoComplete="new-password"
         onChange={onInputChange} />
       <FormButton type="submit" loading={loading} disabled={loading}>Submit</FormButton>
     </form>
