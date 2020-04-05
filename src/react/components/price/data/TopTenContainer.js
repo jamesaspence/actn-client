@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TopTenPrices from './TopTenPrices';
 import Subheader from '../../common/Subheader';
-import { formatDate } from '../../../../service/date';
+import { formatDate, getTimeOfDay } from '../../../../service/date';
 import { fetchTopTenPrices } from '../../../../api/data';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTopTen } from '../../../../redux/actions/prices';
@@ -35,7 +35,7 @@ const TopTenContainer = () => {
 
   const date = new Date();
   const currentDate = formatDate(date);
-  const currentTime = (date.getHours() > 10 && date.getMinutes() > 4) || date.getHours() >= 12 ? 'evening' : 'morning';
+  const currentTime = getTimeOfDay(date);
 
   return (
     <div className="TopTenContainer">
