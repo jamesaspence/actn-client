@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.scss';
 import ContentLayout from '../components/common/ContentLayout';
 import PageHeader from '../components/common/PageHeader';
 import TopTenContainer from '../components/price/data/TopTenContainer';
