@@ -1,8 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import selectLoggedIn from '../../../redux/selectors/auth/selectLoggedIn';
 import HomePurchasingMessage from './HomePurchasingMessage';
 import Purchases from './Purchases';
+import { fetchCurrentPurchases } from '../../../api/purchases';
+import { getCurrentPurchases } from '../../../redux/actions/prices';
+import { STATUSES } from '../../../redux/actions';
+import selectCurrentPurchases from '../../../redux/selectors/prices/selectCurrentPurchases';
 
 const renderLoggedInComponents = purchases => {
   return (
@@ -14,33 +18,22 @@ const renderLoggedInComponents = purchases => {
 
 const HomePurchasingContainer = () => {
   const isLoggedIn = useSelector(selectLoggedIn);
+  const dispatch = useDispatch();
+  const [ purchasesRetrieved, setPurchasesRetrieved ] = useState(false);
 
-  const purchases = [
-    {
-      price: 58,
-      quantity: 300
-    },
-    {
-      price: 61,
-      quantity: 300
-    },
-    {
-      price: 151,
-      quantity: 300
-    },
-    {
-      price: 152,
-      quantity: 300
-    },
-    {
-      price: 12,
-      quantity: 300
-    },
-  ];
-  //TODO check if logged in
-  //TODO if not, load "It's turnip day, login to record purchases."
-  //TODO load week's purchases
-  //TODO render form allowing purchasing of additional turnips
+  useEffect(() => {
+    if (!isLoggedIn || purchasesRetrieved) {
+      return;
+    }
+    setPurchasesRetrieved(true);
+
+    fetchCurrentPurchases()
+      .then(data => dispatch(getCurrentPurchases(STATUSES.SUCCESS, data.data)))
+      .catch(() => dispatch(getCurrentPurchases(STATUSES.FAILURE)))
+
+  }, [ isLoggedIn, purchasesRetrieved, setPurchasesRetrieved, dispatch ]);
+
+  const purchases = useSelector(selectCurrentPurchases);
   return (
     <div className="HomePurchasingContainer">
       <HomePurchasingMessage
