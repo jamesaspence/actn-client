@@ -3,8 +3,8 @@ import FormInput from '../form/FormInput';
 import FormButton from '../form/FormButton';
 import FormSelect from '../form/FormSelect';
 import FormDate from '../form/FormDate';
+import { isSunday } from '../../../service/date';
 
-//TODO disable sundays for price input
 const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) => (
   <form className="RecordPrice" onSubmit={onSubmit}>
     <FormDate
@@ -12,7 +12,9 @@ const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) 
       label="Date"
       error={errors.hasOwnProperty('date')}
       errorMessage={errors.date}
+      value={inputValues.date}
       onChange={onInputChange}
+      disabledDays={isSunday}
     />
     <FormInput
       name="price"

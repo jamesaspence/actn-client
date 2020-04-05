@@ -8,7 +8,9 @@ const FormDate = ({
   label,
   error = false,
   errorMessage = null,
+  value,
   onChange,
+  disabledDays = () => true
 }) => {
 
   const onInputChange = dateString => {
@@ -26,6 +28,10 @@ const FormDate = ({
           inputProps={{
             id: name,
             className: `input ${error ? 'is-danger' : ''}`
+          }}
+          value={value}
+          dayPickerProps={{
+            disabledDays
           }}
         />
       </div>
