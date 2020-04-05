@@ -4,8 +4,8 @@ import FormButton from '../form/FormButton';
 import FormSelect from '../form/FormSelect';
 import FormDate from '../form/FormDate';
 
+//TODO disable sundays for price input
 const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) => (
-  //TODO disable sundays for price input
   <form className="RecordPrice" onSubmit={onSubmit}>
     <FormDate
       name="date"
