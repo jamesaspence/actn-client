@@ -26,7 +26,7 @@ const TopTenContainer = () => {
     fetchTopTenPrices()
       .then(data => {
         setRetrieved(true);
-        dispatch(fetchTopTen(STATUSES.SUCCESS, data.data));
+        dispatch(fetchTopTen(STATUSES.SUCCESS, data));
       }).catch(() => {
       setRetrieved(true);
         dispatch(fetchTopTen(STATUSES.FAILURE));
