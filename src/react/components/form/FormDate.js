@@ -8,6 +8,7 @@ const FormDate = ({
   label,
   error = false,
   errorMessage = null,
+  value,
   onChange,
 }) => {
 
@@ -27,6 +28,7 @@ const FormDate = ({
             id: name,
             className: `input ${error ? 'is-danger' : ''}`
           }}
+          value={value}
         />
       </div>
       {

@@ -12,6 +12,7 @@ const RecordPrice = ({ onSubmit, onInputChange, errors, inputValues, loading }) 
       label="Date"
       error={errors.hasOwnProperty('date')}
       errorMessage={errors.date}
+      value={inputValues.date}
       onChange={onInputChange}
     />
     <FormInput
